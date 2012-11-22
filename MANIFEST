@@ -1,0 +1,7 @@
+LICENSE
+MANIFEST
+META.yml
+Makefile.PL
+README
+lib/Lingua/RUS/Number.pm
+t/Number.t
