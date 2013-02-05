@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.30;
 
 
 my %WriteMakefileArgs = (
-  "ABSTRACT" => "Converts numbers to money sum in words (in Russian roubles)",
+  "ABSTRACT" => "Number 2 word conversion in RUS.",
   "AUTHOR" => "Vladislav A. Safronov <vlad at yandex.ru>",
   "BUILD_REQUIRES" => {
     "Test::More" => 0
@@ -28,7 +28,7 @@ my %WriteMakefileArgs = (
     "vars" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.044",
+  "VERSION" => "0.0577",
   "test" => {
     "TESTS" => "t/*.t"
   }

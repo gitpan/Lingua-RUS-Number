@@ -1,11 +1,11 @@
 
 
 This archive contains the distribution Lingua-RUS-Number,
-version 0.044:
+version 0.0577:
 
-  Converts numbers to money sum in words (in Russian roubles)
+  Number 2 word conversion in RUS.
 
-This software is copyright (c) 2012 by Vladislav A. Safronov.
+This software is copyright (c) 2013 by Vladislav A. Safronov.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.

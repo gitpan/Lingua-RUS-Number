@@ -4,6 +4,7 @@
 #
 
 package Lingua::RUS::Number;
+# ABSTRACT: Number 2 word conversion in RUS.
 
 # {{{ use block
 
@@ -16,8 +17,7 @@ use Perl6::Export::Attrs;
 # }}}
 # {{{ variables declaration
 
-my($ver)      = ('$Rev: 440 $' =~ m{(\d+)}xms);
-our $VERSION = $ver / 10_000;
+our $VERSION = 0.0577;
 
 # Preloaded methods go here.
 use vars qw(%diw %nom);
@@ -169,7 +169,7 @@ Lingua::RUS::Number - Converts numbers to money sum in words (in Russian roubles
 
 =head1 VERSION
 
-version 0.044
+version 0.0577
 
 =head1 SYNOPSIS
 
@@ -178,6 +178,8 @@ version 0.044
   print rur_in_words(1.01), "\n";
 
 =head1 DESCRIPTION
+
+Number 2 word conversion in RUS.
 
 B<Lingua::RUS::Number::rur_in_words()> helps you convert number to money sum in words.
 Given a number, B<rur_in_words()> returns it as money sum in words, e.g.: 1.01 converted

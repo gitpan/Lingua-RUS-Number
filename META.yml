@@ -1,5 +1,5 @@
 ---
-abstract: 'Converts numbers to money sum in words (in Russian roubles)'
+abstract: 'Number 2 word conversion in RUS.'
 author:
   - 'Vladislav A. Safronov <vlad at yandex.ru>'
 build_requires:
@@ -20,4 +20,4 @@ requires:
   utf8: 0
   vars: 0
   warnings: 0
-version: 0.044
+version: 0.0577
