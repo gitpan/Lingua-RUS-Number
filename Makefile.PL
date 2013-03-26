@@ -23,12 +23,12 @@ my %WriteMakefileArgs = (
   "NAME" => "Lingua::RUS::Number",
   "PREREQ_PM" => {
     "Perl6::Export::Attrs" => 0,
+    "encoding" => 0,
     "strict" => 0,
-    "utf8" => 0,
     "vars" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.0682",
+  "VERSION" => "0.0706",
   "test" => {
     "TESTS" => "t/*.t"
   }

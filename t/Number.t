@@ -10,7 +10,7 @@ use strict;
 use warnings;
 use 5.10.1;
 
-use utf8;
+use encoding 'utf8';
 use Test::More;
 
 # }}}
