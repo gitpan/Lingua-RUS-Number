@@ -19,7 +19,7 @@ use Perl6::Export::Attrs;
 # }}}
 # {{{ variables declaration
 
-our $VERSION = 0.0706;
+our $VERSION = 0.0708;
 
 # Preloaded methods go here.
 use vars qw(%diw %nom);
@@ -171,7 +171,7 @@ Lingua::RUS::Number - Converts numbers to money sum in words (in Russian roubles
 
 =head1 VERSION
 
-version 0.0706
+version 0.0708
 
 =head1 SYNOPSIS
 
@@ -187,6 +187,8 @@ B<Lingua::RUS::Number::rur_in_words()> helps you convert number to money sum in 
 Given a number, B<rur_in_words()> returns it as money sum in words, e.g.: 1.01 converted
 to I<odin rubl' odna kopejka>, 2.22 converted to I<dwa rublja dwadcat' dwe kopejki>.
 The target cyrillic charset is B<utf-8>.
+
+Test::More::UTF8 in use in test because of encoding problems.
 
 =head1 FUNCTIONS
 

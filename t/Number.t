@@ -10,8 +10,8 @@ use strict;
 use warnings;
 use 5.10.1;
 
-use encoding 'utf8';
 use Test::More;
+use Test::More::UTF8;
 
 # }}}
 
@@ -70,6 +70,8 @@ for my $test (@{$nw}) {
     is($got, $exp, $test->[2]);
     $tests++;
 }
+
+
 
 # }}}
 # {{{ get_string

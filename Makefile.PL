@@ -12,7 +12,8 @@ my %WriteMakefileArgs = (
   "ABSTRACT" => "Number 2 word conversion in RUS.",
   "AUTHOR" => "Vladislav A. Safronov <vlad at yandex.ru>",
   "BUILD_REQUIRES" => {
-    "Test::More" => 0
+    "Test::More" => 0,
+    "Test::More::UTF8" => 0
   },
   "CONFIGURE_REQUIRES" => {
     "ExtUtils::MakeMaker" => "6.30"
@@ -28,7 +29,7 @@ my %WriteMakefileArgs = (
     "vars" => 0,
     "warnings" => 0
   },
-  "VERSION" => "0.0706",
+  "VERSION" => "0.0708",
   "test" => {
     "TESTS" => "t/*.t"
   }
