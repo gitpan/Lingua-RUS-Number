@@ -12,14 +12,14 @@ use 5.10.1;
 
 use strict;
 use warnings;
-use encoding 'utf8';
+use utf8;
 
 use Perl6::Export::Attrs;
 
 # }}}
 # {{{ variables declaration
 
-our $VERSION = 0.0708;
+our $VERSION = 0.1347;
 
 # Preloaded methods go here.
 use vars qw(%diw %nom);
@@ -171,7 +171,7 @@ Lingua::RUS::Number - Converts numbers to money sum in words (in Russian roubles
 
 =head1 VERSION
 
-version 0.0708
+version 0.1347
 
 =head1 SYNOPSIS
 
