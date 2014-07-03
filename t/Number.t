@@ -12,6 +12,7 @@ use 5.10.1;
 
 use Test::More;
 use Test::More::UTF8;
+use utf8;
 
 # }}}
 
