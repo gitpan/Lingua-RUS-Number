@@ -19,7 +19,7 @@ use Perl6::Export::Attrs;
 # }}}
 # {{{ variables declaration
 
-our $VERSION = 0.1354;
+our $VERSION = 0.1356;
 
 # Preloaded methods go here.
 use vars qw(%diw %nom);
@@ -98,9 +98,9 @@ sub rur_in_words :Export {
     my $kop = get_string($sum_kop, 0);
 
     for ($i=1; $i<6 && $sum_rub >= 1; $i++) {
-        my $sum_tmp  = $sum_rub/1000;
-        my $sum_part = sprintf("%0.3f", $sum_tmp - int($sum_tmp))*1000;
-        $sum_rub = sprintf("%0.0f",$sum_tmp);
+        my $sum_tmp  = $sum_rub / 1000;
+        my $sum_part = sprintf("%0.3f", $sum_tmp - sprintf("%d", $sum_tmp) ) * 1000;
+        $sum_rub     = sprintf("%0.0f",$sum_tmp);
 
         $sum_rub-- if ($sum_rub - $sum_tmp > 0);
         $retval = get_string($sum_part, $i)." ".$retval;
@@ -121,7 +121,7 @@ sub get_string :Export{
     my ($retval, $nom) = ('', -1);
 
     if ((!$nominal && $sum < 100) || ($nominal > 0 && $nominal < 6 && $sum < 1000)) {
-        my $s2 = int($sum/100);
+        my $s2 = sprintf("%d", $sum/100);
         if ($s2 > 0) {
             $retval .= ' '.$diw{2}{$s2}{0};
             $nom = $diw{2}{$s2}{1};
@@ -135,7 +135,7 @@ sub get_string :Export{
         } else {
             my $s1 = sprintf("%0.0f",$sx/10);
             $s1-- if (($s1 - $sx/10) > 0);
-            my $s0 = int($sum - $s2*100 - $s1*10 + 0.5);
+            my $s0 = sprintf("%d", $sum - $s2*100 - $s1*10 + 0.5);
             if ($s1 > 0) {
                 $retval .= ' '.$diw{1}{$s1}{0};
                 $nom = $diw{1}{$s1}{1};
@@ -171,7 +171,7 @@ Lingua::RUS::Number - Converts numbers to money sum in words (in Russian roubles
 
 =head1 VERSION
 
-version 0.1354
+version 0.1356
 
 =head1 SYNOPSIS
 
@@ -188,7 +188,7 @@ Given a number, B<rur_in_words()> returns it as money sum in words, e.g.: 1.01 c
 to I<odin rubl' odna kopejka>, 2.22 converted to I<dwa rublja dwadcat' dwe kopejki>.
 The target cyrillic charset is B<utf-8>.
 
-Test::More::UTF8 and utf8 in use in test because of encoding problems.
+Test::More::UTF8 in use in test because of encoding problems.
 
 =head1 FUNCTIONS
 
