@@ -19,7 +19,7 @@ use Perl6::Export::Attrs;
 # }}}
 # {{{ variables declaration
 
-our $VERSION = 0.1356;
+our $VERSION = 0.136;
 
 # Preloaded methods go here.
 use vars qw(%diw %nom);
@@ -91,16 +91,15 @@ sub rur_in_words :Export {
 
     $retval = "";
     $out_rub = ($sum >= 1) ? 0 : 1;
-    $sum_rub = sprintf("%0.0f", $sum);
+    $sum_rub = sprintf("%d", $sum);
     $sum_rub-- if (($sum_rub - $sum) > 0);
-    $sum_kop = sprintf("%0.2f",($sum - $sum_rub))*100;
-
-    my $kop = get_string($sum_kop, 0);
+    $sum_kop = sprintf("%0.2f", ($sum - $sum_rub)) * 100;
+    my $kop  = get_string($sum_kop, 0);
 
     for ($i=1; $i<6 && $sum_rub >= 1; $i++) {
         my $sum_tmp  = $sum_rub / 1000;
         my $sum_part = sprintf("%0.3f", $sum_tmp - sprintf("%d", $sum_tmp) ) * 1000;
-        $sum_rub     = sprintf("%0.0f",$sum_tmp);
+        $sum_rub     = sprintf("%d", $sum_tmp);
 
         $sum_rub-- if ($sum_rub - $sum_tmp > 0);
         $retval = get_string($sum_part, $i)." ".$retval;
@@ -121,19 +120,19 @@ sub get_string :Export{
     my ($retval, $nom) = ('', -1);
 
     if ((!$nominal && $sum < 100) || ($nominal > 0 && $nominal < 6 && $sum < 1000)) {
-        my $s2 = sprintf("%d", $sum/100);
+        my $s2 = sprintf("%d", $sum / 100);
         if ($s2 > 0) {
             $retval .= ' '.$diw{2}{$s2}{0};
             $nom = $diw{2}{$s2}{1};
         }
-        my $sx = sprintf("%0.0f", $sum - $s2*100);
+        my $sx = sprintf("%d", $sum - $s2 * 100);
         $sx-- if ($sx - ($sum - $s2*100) > 0);
 
         if (($sx<20 && $sx>0) || ($sx == 0 && !$nominal)) {
             $retval .= " ".$diw{0}{$sx}{0};
             $nom = $diw{0}{$sx}{1};
         } else {
-            my $s1 = sprintf("%0.0f",$sx/10);
+            my $s1 = sprintf("%d", $sx / 10);
             $s1-- if (($s1 - $sx/10) > 0);
             my $s0 = sprintf("%d", $sum - $s2*100 - $s1*10 + 0.5);
             if ($s1 > 0) {
@@ -171,7 +170,7 @@ Lingua::RUS::Number - Converts numbers to money sum in words (in Russian roubles
 
 =head1 VERSION
 
-version 0.1356
+version 0.136
 
 =head1 SYNOPSIS
 
